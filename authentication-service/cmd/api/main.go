@@ -24,7 +24,7 @@ type Config struct {
 }
 
 func main() {
-	log.Println("Starting authentication service")
+	log.Printf("Starting broker service on port %s\n", webPort)
 
 	// connect to DB
 	conn := connectToDB()
