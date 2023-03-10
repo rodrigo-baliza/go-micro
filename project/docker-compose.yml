@@ -37,7 +37,7 @@ services:
 
 
   postgres:
-    image: 'postgres:14.0'
+    image: 'postgres:latest'
     ports:
       - "5432:5432"
     restart: always
@@ -55,6 +55,10 @@ services:
     image: 'mongo:4.2.16-bionic'
     ports:
       - "27017:27017"
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1      
     environment:
       MONGO_INITDB_DATABASE: logs
       MONGO_INITDB_ROOT_USERNAME: admin
